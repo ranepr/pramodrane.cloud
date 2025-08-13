@@ -1,0 +1,55 @@
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    root /var/www/cf-demo;
+    index index.html caontact.html loastpackages.html status.html hellobots.html sitecore.html optimization-test.html optimization-media.html ai-translate-demo.html;
+
+    server_name pramodrane.cloud;
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    location /contact {
+        try_files $uri $uri/ /contact.html; 
+    }
+
+    location /lostpackages {
+        try_files $uri $uri/ /lostpackages.html; 
+    }
+
+    location /status {
+        try_files $uri $uri/ /status.html;
+    }
+    
+    location /hellobots {
+        try_files $uri $uri/ /hellobots.html;
+    }
+
+    location /sitecore {
+        try_files $uri $uri/ /sitecore.html;
+    }
+
+    location /optimization-test {
+        try_files $uri $uri/ /optimization-test.html;
+    }
+
+    location /optimization-media {
+        try_files $uri $uri/ /optimization-media.html;
+    }
+
+    location /images/ {
+        root /var/www/cf-demo;
+        autoindex off;
+    }
+
+    location /media/ {
+        root /var/www/cf-demo;
+        autoindex off;
+    }
+
+    location /ai-translate-demo {
+        try_files $uri $uri/ /ai-translate-demo.html;
+    }
+}
